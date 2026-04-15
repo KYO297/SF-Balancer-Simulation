@@ -1,6 +1,6 @@
 package com.kyo.sf.sim;
 
-abstract class Buffer {
+public abstract class Buffer {
     private int contents = 0;
 
     public boolean isFull() {

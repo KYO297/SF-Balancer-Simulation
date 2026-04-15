@@ -11,7 +11,6 @@ public class IODot extends Circle {
     private double cy;
 
     public IODot(boolean filled, Dirs dir) {
-        super();
         setRadius(UIConfig.SHAPE_SIZE / 10);
         setFill(filled ? Color.BLACK : Color.WHITE);
         setStroke(Color.BLACK);

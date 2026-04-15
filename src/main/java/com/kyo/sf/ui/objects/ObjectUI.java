@@ -11,9 +11,8 @@ import javafx.scene.text.FontWeight;
 
 public class ObjectUI extends Pane {
     public ObjectUI() {
-        super();
         Rectangle shape = new Rectangle(UIConfig.SHAPE_SIZE, UIConfig.SHAPE_SIZE);
-        shape.setFill(Color.TRANSPARENT);
+        shape.setFill(Color.WHITE);
         shape.setStroke(Color.BLACK);
         shape.setStrokeWidth(UIConfig.SHAPE_SIZE / 32);
         getChildren().add(shape);

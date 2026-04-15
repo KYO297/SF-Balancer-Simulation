@@ -1,6 +1,6 @@
 package com.kyo.sf.ui;
 
-import com.kyo.sf.ui.objects.SplitterUI;
+import com.kyo.sf.ui.objects.*;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
@@ -15,6 +15,7 @@ public class Application extends javafx.application.Application {
         Pane centerPane = new Pane();
         root.setCenter(centerPane);
 
+        centerPane.getChildren().add(new MergerUI());
         centerPane.getChildren().add(new SplitterUI());
         HBox controlBox = new HBox();
         controlBox.setSpacing(10);
