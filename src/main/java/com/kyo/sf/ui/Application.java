@@ -14,9 +14,12 @@ public class Application extends javafx.application.Application {
         BorderPane root = new BorderPane();
         Pane centerPane = new Pane();
         root.setCenter(centerPane);
+        SplitterUI S1 = new SplitterUI();
+        MergerUI M1 = new MergerUI();
+        centerPane.getChildren().add(S1);
+        centerPane.getChildren().add(M1);
+        centerPane.getChildren().add(new BeltUI(S1.O2,M1.I2));
 
-        centerPane.getChildren().add(new MergerUI());
-        centerPane.getChildren().add(new SplitterUI());
         HBox controlBox = new HBox();
         controlBox.setSpacing(10);
         Button startButton = new Button("Start");
