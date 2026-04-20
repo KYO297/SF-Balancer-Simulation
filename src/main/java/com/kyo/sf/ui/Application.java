@@ -1,6 +1,8 @@
 package com.kyo.sf.ui;
 
-import com.kyo.sf.ui.objects.*;
+import com.kyo.sf.ui.objects.BeltUI;
+import com.kyo.sf.ui.objects.MergerUI;
+import com.kyo.sf.ui.objects.SplitterUI;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
@@ -18,7 +20,7 @@ public class Application extends javafx.application.Application {
         MergerUI M1 = new MergerUI();
         centerPane.getChildren().add(S1);
         centerPane.getChildren().add(M1);
-        centerPane.getChildren().add(new BeltUI(S1.O2,M1.I2));
+        centerPane.getChildren().add(new BeltUI(S1.O2, M1.I2));
 
         HBox controlBox = new HBox();
         controlBox.setSpacing(10);
