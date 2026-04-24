@@ -16,10 +16,12 @@ import java.util.function.Consumer;
 
 
 public class Controller {
-    private IODot start = null;
-    private final Simulation sim = new Simulation();
     BorderPane root = new BorderPane();
     Pane centerPane = new Pane();
+
+
+    private IODot start = null;
+    private final Simulation sim = new Simulation();
 
     Consumer<IODot> onDragStart = (IODot start) -> this.start = start;
 
@@ -47,6 +49,7 @@ public class Controller {
     private IODot dragStart = null;
     private Line previewLine = null;
 
+
     // Call this when setting up each IODot
     public void wireDot(IODot dot) {
         dot.setOnMousePressed(event -> {
@@ -64,14 +67,14 @@ public class Controller {
             previewLine.setEndX(event.getSceneX());
             previewLine.setEndY(event.getSceneY());
 
-            canvas.getChildren().add(previewLine);
+            centerPane.getChildren().add(previewLine);
             event.consume();
         });
 
         dot.setOnMouseDragged(event -> {
             if (previewLine != null) {
                 // Convert scene coords to canvas coords (same pattern as object dragging)
-                var canvasLocal = canvas.sceneToLocal(event.getSceneX(), event.getSceneY());
+                var canvasLocal = centerPane.sceneToLocal(event.getSceneX(), event.getSceneY());
                 previewLine.setEndX(canvasLocal.getX());
                 previewLine.setEndY(canvasLocal.getY());
             }
@@ -81,7 +84,7 @@ public class Controller {
         dot.setOnMouseReleased(event -> {
             // Remove preview regardless of whether connection succeeded
             if (previewLine != null) {
-                canvas.getChildren().remove(previewLine);
+                centerPane.getChildren().remove(previewLine);
                 previewLine = null;
             }
             dragStart = null;
